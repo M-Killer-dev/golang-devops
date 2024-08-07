@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"encoding/json"
+	"fmt"
+	"net"
 	"net/http"
 	"time"
 )
@@ -20,4 +22,16 @@ func RootHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(response)
+}
+
+func ValidateHandler(w http.ResponseWriter, r *http.Request) {
+	ip_address := r.FormValue("ip")
+
+	fmt.Printf("IP address => %s\n", ip_address)
+
+	if net.ParseIP(ip_address) != nil {
+		w.Write([]byte("Valid IP address"))
+	} else {
+		w.Write([]byte("Invalid IP address"))
+	}
 }

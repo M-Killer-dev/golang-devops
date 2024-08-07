@@ -8,4 +8,5 @@ import (
 func Route() {
 	// Register the handler function for the "/" route
 	http.HandleFunc("/", controllers.RootHandler)
+	http.HandleFunc("/v1/tools/validate", controllers.ValidateHandler)
 }
