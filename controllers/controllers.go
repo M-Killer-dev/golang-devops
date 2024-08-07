@@ -35,3 +35,15 @@ func ValidateHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Invalid IP address"))
 	}
 }
+
+func LookupHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Printf("lookup handler \n")
+
+	w.Write([]byte("lookup handler"))
+}
+
+func HistoryHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Printf("history handler \n")
+
+	w.Write([]byte("history handler"))
+}
