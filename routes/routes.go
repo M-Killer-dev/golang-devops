@@ -7,5 +7,5 @@ import (
 
 func Route() {
 	// Register the handler function for the "/" route
-	http.HandleFunc("/", controllers.HelloHandler)
+	http.HandleFunc("/", controllers.RootHandler)
 }
